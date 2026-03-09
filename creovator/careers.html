@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Careers — Creovator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* ══ WORK WITH US ══ */
+    .cw-section {
+      background: #fff;
+      padding: 100px 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .cw-header {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 64px;
+    }
+
+    .cw-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: #2F6BFF;
+      margin-bottom: 16px;
+    }
+
+    .cw-eyebrow span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #2F6BFF;
+      border-radius: 2px;
+    }
+
+    .cw-title {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 800;
+      letter-spacing: -.04em;
+      line-height: 1.1;
+      color: #111;
+      margin-bottom: 16px;
+    }
+
+    .cw-title em {
+      font-style: normal;
+      color: #2F6BFF;
+    }
+
+    .cw-sub {
+      font-size: 1rem;
+      color: #6B7280;
+      line-height: 1.75;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Two col layout */
+    .cw-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .cw-body-text p {
+      font-size: .95rem;
+      color: #6B7280;
+      line-height: 1.8;
+      font-family: 'Inter', sans-serif;
+      margin-bottom: 16px;
+    }
+
+    /* Photo placeholder */
+    .cw-photo {
+      border-radius: 24px;
+      background: #F6F8FC;
+      border: 1.5px dashed rgba(47, 107, 255, .25);
+      aspect-ratio: 4/3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      color: rgba(47, 107, 255, .4);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-family: 'Inter', sans-serif;
+      position: relative;
+      overflow: hidden;
+      transition: border-color .4s, transform .5s cubic-bezier(.34, 1.56, .64, 1), box-shadow .4s;
+    }
+
+    .cw-photo:hover {
+      border-color: rgba(47, 107, 255, .5);
+      transform: scale(1.02);
+      box-shadow: 0 20px 56px rgba(47, 107, 255, .1);
+    }
+
+    .cw-photo svg {
+      width: 36px;
+      height: 36px;
+      opacity: .3;
+    }
+
+    /* ── ACCORDION EXPAND CARDS (Why Join) ── */
+    .cw-why-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #111;
+      letter-spacing: -.01em;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
+
+    .cw-accordion {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .cw-acc-item {
+      border-radius: 16px;
+      border: 1.5px solid #E5E9F2;
+      background: #F6F8FC;
+      overflow: hidden;
+      transition: border-color .35s, box-shadow .35s, background .35s;
+      cursor: none;
+    }
+
+    .cw-acc-item.open {
+      border-color: rgba(47, 107, 255, .3);
+      background: #fff;
+      box-shadow: 0 8px 32px rgba(47, 107, 255, .1);
+    }
+
+    .cw-acc-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 20px;
+      user-select: none;
+    }
+
+    .cw-acc-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      flex-shrink: 0;
+      background: rgba(47, 107, 255, .08);
+      border: 1px solid rgba(47, 107, 255, .12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      transition: background .35s, transform .4s cubic-bezier(.34, 1.56, .64, 1), box-shadow .35s;
+    }
+
+    .cw-acc-item.open .cw-acc-icon {
+      background: linear-gradient(135deg, #2F6BFF, #4A8CFF);
+      box-shadow: 0 4px 16px rgba(47, 107, 255, .35);
+      transform: rotate(-8deg) scale(1.1);
+    }
+
+    .cw-acc-label {
+      font-size: .92rem;
+      font-weight: 700;
+      color: #111;
+      font-family: 'Inter', sans-serif;
+      transition: color .3s;
+    }
+
+    .cw-acc-item.open .cw-acc-label {
+      color: #2F6BFF;
+    }
+
+    .cw-acc-num {
+      margin-left: auto;
+      font-size: 11px;
+      font-weight: 700;
+      color: #D1D5DB;
+      letter-spacing: .08em;
+      font-family: 'Inter', sans-serif;
+      transition: color .3s;
+    }
+
+    .cw-acc-item.open .cw-acc-num {
+      color: rgba(47, 107, 255, .4);
+    }
+
+    .cw-acc-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .45s cubic-bezier(.4, 0, .2, 1), padding .35s;
+      padding: 0 20px;
+    }
+
+    .cw-acc-item.open .cw-acc-body {
+      max-height: 80px;
+      padding-bottom: 16px;
+    }
+
+    .cw-acc-desc {
+      font-size: .85rem;
+      color: #6B7280;
+      line-height: 1.7;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* ══ JOB PORTALS ══ */
+    .cp-section {
+      background: #F6F8FC;
+      padding: 100px 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .cp-header {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 56px;
+    }
+
+    .cp-title {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(1.8rem, 3.5vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -.04em;
+      line-height: 1.1;
+      color: #111;
+      margin-bottom: 16px;
+    }
+
+    .cp-title em {
+      font-style: normal;
+      color: #2F6BFF;
+    }
+
+    .cp-sub {
+      font-size: .95rem;
+      color: #6B7280;
+      line-height: 1.75;
+      font-family: 'Inter', sans-serif;
+    }
+
+    /* Flip cards grid */
+    .cp-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .cp-flip {
+      height: 240px;
+      perspective: 1000px;
+      cursor: none;
+    }
+
+    .cp-flip-inner {
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform .65s cubic-bezier(.4, 0, .2, 1);
+      position: relative;
+    }
+
+    .cp-flip:hover .cp-flip-inner {
+      transform: rotateY(180deg);
+    }
+
+    .cp-front,
+    .cp-back {
+      position: absolute;
+      inset: 0;
+      border-radius: 20px;
+      backface-visibility: hidden;
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .cp-front {
+      background: #fff;
+      border: 1.5px solid #E5E9F2;
+      box-shadow: 0 2px 12px rgba(47, 107, 255, .06);
+    }
+
+    .cp-back {
+      background: linear-gradient(135deg, #0B2E6B, #2F6BFF);
+      border: 1px solid rgba(255, 255, 255, .1);
+      transform: rotateY(180deg);
+    }
+
+    /* Dark variant */
+    .cp-flip.dark .cp-front {
+      background: linear-gradient(135deg, #0B1A3E, #0B2E6B);
+      border-color: rgba(47, 107, 255, .2);
+    }
+
+    .cp-front-top {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .cp-front-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: rgba(47, 107, 255, .08);
+      border: 1px solid rgba(47, 107, 255, .12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+      transition: background .4s, transform .4s cubic-bezier(.34, 1.56, .64, 1);
+    }
+
+    .cp-flip:hover .cp-front-icon {
+      background: linear-gradient(135deg, #2F6BFF, #4A8CFF);
+      transform: scale(0);
+    }
+
+    .cp-front-name {
+      font-size: 1rem;
+      font-weight: 800;
+      color: #111;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: -.02em;
+    }
+
+    .cp-flip.dark .cp-front-name {
+      color: #fff;
+    }
+
+    .cp-front-hint {
+      font-size: .78rem;
+      color: #9CA3AF;
+      font-weight: 500;
+      font-family: 'Inter', sans-serif;
+      margin-top: 3px;
+    }
+
+    .cp-flip.dark .cp-front-hint {
+      color: rgba(255, 255, 255, .35);
+    }
+
+    .cp-front-bottom {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #2F6BFF;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .cp-flip.dark .cp-front-bottom {
+      color: rgba(255, 255, 255, .5);
+    }
+
+    .cp-front-bottom svg {
+      width: 12px;
+      height: 12px;
+    }
+
+    .cp-back-desc {
+      font-size: .88rem;
+      color: rgba(255, 255, 255, .8);
+      line-height: 1.7;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .cp-back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      background: #fff;
+      color: #2F6BFF;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+      text-decoration: none;
+      width: fit-content;
+      transition: transform .3s cubic-bezier(.34, 1.56, .64, 1), box-shadow .3s;
+    }
+
+    .cp-back-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .15);
+    }
+
+    .cp-back-btn svg {
+      width: 13px;
+      height: 13px;
+    }
+
+    /* ══ OPEN APPLICATION CTA ══ */
+    .cc-section {
+      background: linear-gradient(135deg, #060E1F, #0B2E6B, #2F6BFF);
+      padding: 100px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .cc-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 60% at 50% 50%, rgba(255, 255, 255, .06) 0%, transparent 70%);
+    }
+
+    .cc-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .cc-tag {
+      display: inline-block;
+      padding: 5px 16px;
+      background: rgba(255, 255, 255, .1);
+      border: 1px solid rgba(255, 255, 255, .2);
+      border-radius: 50px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .7);
+      font-family: 'Inter', sans-serif;
+      margin-bottom: 20px;
+    }
+
+    .cc-title {
+      font-family: 'Inter', sans-serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 900;
+      letter-spacing: -.05em;
+      line-height: 1.05;
+      color: white;
+      margin-bottom: 12px;
+    }
+
+    .cc-sub {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, .6);
+      max-width: 480px;
+      margin: 0 auto 10px;
+      line-height: 1.75;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .cc-note {
+      font-size: .82rem;
+      color: rgba(255, 255, 255, .3);
+      font-family: 'Inter', sans-serif;
+      margin-bottom: 36px;
+    }
+
+    .cc-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 15px 36px;
+      background: #fff;
+      color: #111;
+      border-radius: 50px;
+      font-size: 15px;
+      font-weight: 700;
+      font-family: 'Inter', sans-serif;
+      text-decoration: none;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, .2);
+      transition: transform .35s cubic-bezier(.34, 1.56, .64, 1), box-shadow .35s, background .35s, color .35s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cc-btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #2F6BFF, #4A8CFF);
+      opacity: 0;
+      transition: opacity .35s;
+    }
+
+    .cc-btn:hover::after {
+      opacity: 1;
+    }
+
+    .cc-btn span,
+    .cc-btn svg {
+      position: relative;
+      z-index: 1;
+      transition: color .35s;
+    }
+
+    .cc-btn:hover span,
+    .cc-btn:hover svg {
+      color: white;
+    }
+
+    .cc-btn:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, .25);
+    }
+
+    .cc-btn svg {
+      width: 16px;
+      height: 16px;
+      transition: transform .3s cubic-bezier(.34, 1.56, .64, 1), color .35s;
+    }
+
+    .cc-btn:hover svg {
+      transform: translateX(4px);
+    }
+
+    /* Scroll reveal */
+    .car-reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity .65s ease, transform .65s cubic-bezier(.34, 1.56, .64, 1);
+    }
+
+    .car-reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    .car-reveal-l {
+      opacity: 0;
+      transform: translateX(-36px);
+      transition: opacity .65s ease, transform .65s cubic-bezier(.34, 1.56, .64, 1);
+    }
+
+    .car-reveal-l.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    .car-reveal-r {
+      opacity: 0;
+      transform: translateX(36px);
+      transition: opacity .65s ease, transform .65s cubic-bezier(.34, 1.56, .64, 1);
+    }
+
+    .car-reveal-r.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media(max-width:800px) {
+
+      .cw-body {
+        grid-template-columns: 1fr;
+      }
+
+      .cp-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cp-flip {
+        height: 220px;
+      }
+
+      /* FIX for Why people love it here cards */
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Creovator" /></a>
+    <div class="nav-links">
+      <div class="nav-indicator"></div>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="work.html" class="nav-link">Our Work</a>
+      <a href="about.html" class="nav-link">About Us</a>
+      <a href="careers.html" class="nav-link">Careers</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+    <a href="contact.html" class="nav-cta">Start a Project</a>
+    <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="nav-mobile-menu">
+    <a href="index.html">Home</a><a href="work.html">Our Work</a><a href="about.html">About Us</a><a
+      href="careers.html">Careers</a><a href="contact.html">Contact</a>
+  </div>
+
+  <section class="page-hero">
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="page-hero-label">Join the Team</div>
+      <h1 class="page-hero-title">Shape the future<br /><span style="opacity:0.65;">of digital marketing.</span></h1>
+      <p class="page-hero-sub">We're building a team of bold thinkers, creative doers, and data-driven strategists. Come
+        help us change the industry.</p>
+    </div>
+  </section>
+
+  <!-- WHY CREOVATOR -->
+  <section class="section" style="background:var(--white);">
+    <div class="container">
+      <div style="text-align:center;max-width:480px;margin:0 auto 56px;">
+        <span class="section-label">Life at Creovator</span>
+        <h2 class="section-title">Why people <span class="highlight">love it here</span></h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+        <div class="service-card reveal" style="text-align:center;">
+          <div class="service-icon" style="margin:0 auto 20px;font-size:1.8rem;width:60px;height:60px;">🌍</div>
+          <h3 class="service-title">Remote-first</h3>
+          <p class="service-desc">Work from anywhere. We have team members across 8 countries and trust you to do your
+            best work wherever that is.</p>
+        </div>
+        <div class="service-card reveal" style="text-align:center;">
+          <div class="service-icon" style="margin:0 auto 20px;font-size:1.8rem;width:60px;height:60px;">📈</div>
+          <h3 class="service-title">Real growth</h3>
+          <p class="service-desc">Mentorship, learning budgets, and clear career paths — we invest in your development
+            as much as our clients'.</p>
+        </div>
+        <div class="service-card reveal" style="text-align:center;">
+          <div class="service-icon" style="margin:0 auto 20px;font-size:1.8rem;width:60px;height:60px;">🎯</div>
+          <h3 class="service-title">Meaningful work</h3>
+          <p class="service-desc">Work on real brands with real impact. No busywork — every project is an opportunity to
+            build your portfolio.</p>
+        </div>
+        <div class="service-card reveal" style="text-align:center;">
+          <div class="service-icon" style="margin:0 auto 20px;font-size:1.8rem;width:60px;height:60px;">💰</div>
+          <h3 class="service-title">Competitive pay</h3>
+          <p class="service-desc">Market-leading salaries, performance bonuses, and equity for senior hires. Your
+            contribution is rewarded.</p>
+        </div>
+        <div class="service-card reveal" style="text-align:center;">
+          <div class="service-icon" style="margin:0 auto 20px;font-size:1.8rem;width:60px;height:60px;">🏖️</div>
+          <h3 class="service-title">Unlimited PTO</h3>
+          <p class="service-desc">We trust you to manage your time. Take the breaks you need to bring your best self to
+            work every day.</p>
+        </div>
+        <div class="service-card reveal" style="text-align:center;">
+          <div class="service-icon" style="margin:0 auto 20px;font-size:1.8rem;width:60px;height:60px;">🤝</div>
+          <h3 class="service-title">Great culture</h3>
+          <p class="service-desc">A team that challenges you, supports you, and celebrates wins together. No politics,
+            no egos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK WITH US -->
+  <section class="cw-section">
+    <div class="container">
+      <div class="cw-header car-reveal">
+        <div class="cw-eyebrow"><span></span> At Creovator</div>
+        <h2 class="cw-title">Work With Us <em>at Creovator</em></h2>
+        <p class="cw-sub">At Creovator, we believe that great ideas come from passionate people — creative thinkers,
+          strategists, designers, and marketers who love turning ideas into impactful digital experiences.</p>
+      </div>
+
+      <div class="cw-body">
+        <!-- Left: text + accordion -->
+        <div class="car-reveal-l">
+          <div class="cw-body-text">
+            <p>We are always looking for talented individuals who are eager to learn, innovate, and grow in the
+              fast-paced world of digital marketing. Whether you are a creative designer, content creator, digital
+              marketer, developer, or strategist, Creovator offers an environment where your skills can flourish.</p>
+          </div>
+
+          <p class="cw-why-title"
+            style="font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;color:#9CA3AF;margin-bottom:14px;">
+            WHY JOIN CREOVATOR</p>
+
+          <div class="cw-accordion" id="cwAccordion">
+            <div class="cw-acc-item open" data-index="0">
+              <div class="cw-acc-header">
+                <div class="cw-acc-icon">🌱</div>
+                <span class="cw-acc-label">Creative Environment</span>
+                <span class="cw-acc-num">01</span>
+              </div>
+              <div class="cw-acc-body">
+                <div class="cw-acc-desc">Work with a team that values innovation and fresh ideas at every step of the
+                  process.</div>
+              </div>
+            </div>
+            <div class="cw-acc-item" data-index="1">
+              <div class="cw-acc-header">
+                <div class="cw-acc-icon">📈</div>
+                <span class="cw-acc-label">Career Growth</span>
+                <span class="cw-acc-num">02</span>
+              </div>
+              <div class="cw-acc-body">
+                <div class="cw-acc-desc">Opportunities to learn new tools, technologies, and strategies in digital
+                  marketing.</div>
+              </div>
+            </div>
+            <div class="cw-acc-item" data-index="2">
+              <div class="cw-acc-header">
+                <div class="cw-acc-icon">🤝</div>
+                <span class="cw-acc-label">Collaborative Culture</span>
+                <span class="cw-acc-num">03</span>
+              </div>
+              <div class="cw-acc-body">
+                <div class="cw-acc-desc">A supportive team where everyone's ideas matter and contributions are valued.
+                </div>
+              </div>
+            </div>
+            <div class="cw-acc-item" data-index="3">
+              <div class="cw-acc-header">
+                <div class="cw-acc-icon">🎯</div>
+                <span class="cw-acc-label">Real Client Exposure</span>
+                <span class="cw-acc-num">04</span>
+              </div>
+              <div class="cw-acc-body">
+                <div class="cw-acc-desc">Work on real projects and build a strong professional portfolio from day one.
+                </div>
+              </div>
+            </div>
+            <div class="cw-acc-item" data-index="4">
+              <div class="cw-acc-header">
+                <div class="cw-acc-icon">🚀</div>
+                <span class="cw-acc-label">Skill Development</span>
+                <span class="cw-acc-num">05</span>
+              </div>
+              <div class="cw-acc-body">
+                <div class="cw-acc-desc">Improve your creativity, marketing knowledge, and digital expertise every day.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: photo -->
+        <div class="car-reveal-r" style="transition-delay:.15s;">
+          <div class="cw-photo">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+            </svg>
+            Random Photos with Employees
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOB PORTALS -->
+  <section class="cp-section">
+    <div class="container">
+      <div class="cp-header car-reveal">
+        <div class="cw-eyebrow"><span></span> Open Positions</div>
+        <h2 class="cp-title">Find Our Open Positions on <em>Leading Job Portals</em></h2>
+        <p class="cp-sub">We regularly post job openings on trusted platforms. Hover any card to explore and apply
+          through your preferred platform.</p>
+      </div>
+
+      <div class="cp-grid">
+
+        <div class="cp-flip car-reveal" style="transition-delay:.05s;">
+          <div class="cp-flip-inner">
+            <div class="cp-front">
+              <div class="cp-front-top">
+                <div class="cp-front-icon">💼</div>
+                <div>
+                  <div class="cp-front-name">Browse on Naukri</div>
+                  <div class="cp-front-hint">Hover to explore →</div>
+                </div>
+              </div>
+              <div class="cp-front-bottom">
+                Explore openings
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </div>
+            </div>
+            <div class="cp-back">
+              <div class="cp-back-desc">Explore all current openings on Naukri — one of India's largest job platforms.
+                Find roles that match your skills and apply directly.</div>
+              <a href="#" class="cp-back-btn">
+                Explore on Naukri
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="cp-flip car-reveal" style="transition-delay:.1s;">
+          <div class="cp-flip-inner">
+            <div class="cp-front">
+              <div class="cp-front-top">
+                <div class="cp-front-icon">🔗</div>
+                <div>
+                  <div class="cp-front-name">Check on LinkedIn</div>
+                  <div class="cp-front-hint">Hover to explore →</div>
+                </div>
+              </div>
+              <div class="cp-front-bottom">
+                View career updates
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </div>
+            </div>
+            <div class="cp-back">
+              <div class="cp-back-desc">Follow us on LinkedIn for the latest job postings, company updates, and career
+                opportunities at Creovator.</div>
+              <a href="#" class="cp-back-btn">
+                View on LinkedIn
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="cp-flip car-reveal" style="transition-delay:.15s;">
+          <div class="cp-flip-inner">
+            <div class="cp-front">
+              <div class="cp-front-top">
+                <div class="cp-front-icon">🔍</div>
+                <div>
+                  <div class="cp-front-name">Explore on Indeed</div>
+                  <div class="cp-front-hint">Hover to explore →</div>
+                </div>
+              </div>
+              <div class="cp-front-bottom">
+                Search openings
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </div>
+            </div>
+            <div class="cp-back">
+              <div class="cp-back-desc">Search and apply for Creovator positions on Indeed — view job descriptions,
+                requirements, and application details for all available roles.</div>
+              <a href="#" class="cp-back-btn">
+                Explore on Indeed
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="cp-flip dark car-reveal" style="transition-delay:.2s;">
+          <div class="cp-flip-inner">
+            <div class="cp-front">
+              <div class="cp-front-top">
+                <div class="cp-front-icon" style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.15);">
+                  🌟</div>
+                <div>
+                  <div class="cp-front-name">Start Your Journey</div>
+                  <div class="cp-front-hint">Hover to explore →</div>
+                </div>
+              </div>
+              <div class="cp-front-bottom">
+                Get in touch
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </div>
+            </div>
+            <div class="cp-back" style="background:linear-gradient(135deg,#2F6BFF,#4A8CFF);">
+              <div class="cp-back-desc">Become part of a team that values creativity, innovation, and growth. Your
+                journey at Creovator starts here.</div>
+              <a href="contact.html" class="cp-back-btn">
+                Get in touch
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- OPEN APPLICATION CTA -->
+  <section class="cc-section">
+    <div class="cc-inner container">
+      <div class="cc-tag">Open Applications</div>
+      <h2 class="cc-title">Let's Get In Touch</h2>
+      <p class="cc-sub">Don't see the right role? If you believe you'd be a great fit for our team, we'd love to hear
+        from you. Fill out the form and share your details with us.</p>
+      <p class="cc-note">Our team will review your profile and contact you if there's a suitable opportunity.</p>
+      <a href="contact.html" class="cc-btn">
+        <span>Get in touch</span>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ════════════ FOOTER ════════════ -->
+  <footer class="footer">
+    <div class="container footer-grid">
+
+      <div>
+        <img src="images/logo.png" class="footer-brand-logo">
+        <p class="footer-brand-desc">
+          Turning creativity into digital impact.
+          We help brands grow with smart strategy,
+          content and campaigns.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Company</h4>
+        <div class="footer-links">
+          <a href="about.html">About Us</a>
+          <a href="work.html">Our Work</a>
+          <a href="careers.html">Careers</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Social</h4>
+        <div class="footer-links">
+          <a href="#">Instagram</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">YouTube</a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Newsletter</h4>
+        <div class="footer-newsletter-input">
+          <input type="email" placeholder="Your email">
+          <button class="footer-newsletter-btn">→</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="container footer-bottom">
+      <span>© 2025 Creovator. All rights reserved.</span>
+
+      <div class="footer-bottom-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Cookies</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+  <script>
+    // Scroll reveal
+    const carObs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const d = parseFloat(e.target.style.transitionDelay || 0) * 1000;
+          setTimeout(() => e.target.classList.add('visible'), d);
+          carObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: .08 });
+    document.querySelectorAll('.car-reveal, .car-reveal-l, .car-reveal-r').forEach(el => carObs.observe(el));
+
+    // Accordion
+    document.querySelectorAll('.cw-acc-item').forEach(item => {
+      item.querySelector('.cw-acc-header').addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.cw-acc-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
+</body>
+
+</html>

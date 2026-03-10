@@ -2082,3 +2082,278 @@ button {
   color: rgba(255, 255, 255, 0.8);
   pointer-events: none;
 }
+
+@media (max-width: 768px) {
+  /* Forces the container to stack vertically instead of side-by-side */
+  .container, 
+  .page-hero-label { 
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 100%;
+  }
+
+  /* Makes the text take up full width */
+  .car-reveal-l, 
+  .car-reveal-r {
+    width: 100% !important;
+    margin-bottom: 30px;
+  }
+
+  /* Fixes the image/stats box to fit the screen width */
+  .cw-photo {
+    width: 100%;
+    height: auto;
+    min-height: 300px; /* Adjust as needed */
+  }
+
+  /* Ensures the blue stats grid fits mobile */
+  .stats-grid-selector { /* Replace with your actual stats container class */
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 columns on mobile instead of 4 */
+    gap: 10px;
+  }
+}
+@media (max-width: 768px) {
+  /* Fixes the 3-column grid to stack one by one */
+  div[style*="grid-template-columns:repeat(3,1fr)"] {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* Ensures the header text doesn't get cut off */
+  div[style*="max-width:480px"] {
+    max-width: 100% !important;
+    padding: 0 20px;
+  }
+
+  /* Adjusts the service cards for mobile spacing */
+  .service-card {
+    padding: 24px;
+    width: 100%;
+  }
+
+  /* Fixes the CTA buttons to stack on small screens */
+  .cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+  
+  .cta-buttons .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* 1. Center the grid container and set to 1 column */
+  div[style*="display:grid"], 
+  div[style*="display: grid"] {
+    grid-template-columns: 1fr !important;
+    justify-items: center !important; /* Centers the cards horizontally */
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  /* 2. Ensure each card content is centered */
+  .service-card, .reveal {
+    text-align: center !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the icon, title, and text */
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  /* 3. Fix the Our Vision/Mission boxes from your screenshot */
+  .vision-mission-container, /* replace with your actual class if different */
+  div[style*="display: flex"] {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  /* 4. Center the titles and labels */
+  .section-label, .section-title, .cta-title, .cta-sub {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+@media (max-width: 768px) {
+  /* 1. Fix Hero Section */
+  .hero-content {
+    padding: 80px 20px 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-title {
+    font-size: 2.4rem !important; /* Prevents text from breaking mid-word */
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+
+  .hero-sub {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  /* 2. Fix Hero Stats (Stacking them 1 by 1) */
+  .hero-stats {
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 40px;
+  }
+
+  /* 3. Fix Services Grid (Stacking cards) */
+  .services-grid-new {
+    grid-template-columns: 1fr !important;
+    gap: 30px;
+    padding: 0 10px;
+  }
+
+  .service-card-new {
+    max-width: 400px;
+    margin: 0 auto; /* Centers the cards */
+  }
+
+  /* 4. Fix About Section Grid */
+  .about-grid {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+    gap: 50px;
+  }
+
+  .about-visual {
+    order: 2; /* Moves the image below the text on mobile */
+  }
+
+  .about-values {
+    grid-template-columns: 1fr 1fr !important; /* 2x2 grid for values */
+    justify-items: center;
+  }
+
+  /* 5. Fix Testimonials & Work Grid */
+  .testimonials-grid, 
+  .work-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* 6. Fix Footer alignment */
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .footer-links {
+    align-items: center;
+  }
+
+  .footer-newsletter-input {
+    margin: 0 auto;
+    max-width: 300px;
+  }
+}
+
+/* 7. Extra fix for very small screens (iPhone SE) */
+@media (max-width: 400px) {
+  .hero-title {
+    font-size: 2rem !important;
+  }
+  
+  .cta-title {
+    font-size: 1.8rem !important;
+  }
+}
+@media (max-width: 768px) {
+  /* 1. Reduce font size and fix line height */
+  .hero-title {
+    font-size: 2.2rem !important; /* Adjust this until it fits perfectly */
+    line-height: 1.2 !important;
+    text-align: center;
+    padding: 0 15px;
+    word-break: keep-all; /* Prevents breaking words in the middle */
+    display: block;
+  }
+
+  /* 2. Hide the manual break so the text flows naturally */
+  .hero-title br {
+    display: none;
+  }
+
+  /* 3. Ensure the span doesn't force extra spacing */
+  .word-blue {
+    display: inline;
+    color: var(--accent); /* Or your blue variable */
+  }
+}
+
+@media (max-width: 768px) {
+  /* 1. Reset Career Hero & Subtitles */
+  .cp-header, .cw-header {
+    text-align: center !important;
+    padding: 0 15px;
+  }
+  
+  .cp-sub, .cw-sub {
+    margin: 0 auto 30px !important;
+    max-width: 100% !important;
+  }
+
+  /* 2. Fix Why Creovator Grid (Stacking cards) */
+  .services-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    padding: 0 10px;
+  }
+
+  /* 3. Fix "Work With Us" Section (Stacking text and image) */
+  .cw-body {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 40px;
+  }
+
+  .cw-photo {
+    width: 100% !important;
+    max-width: 350px;
+    margin: 0 auto !important; /* Centers the image */
+  }
+
+  /* 4. Fix Job Portals (Flapping cards) */
+  .cp-grid {
+    grid-template-columns: 1fr !important; /* Stack 1 by 1 */
+    gap: 20px !important;
+    justify-items: center;
+  }
+
+  .cp-flip {
+    width: 100% !important;
+    max-width: 320px; /* Prevents cards from being too wide */
+    height: 220px !important; /* Adjust height for mobile if needed */
+  }
+
+  /* 5. Fix Accordion Width */
+  .cw-accordion {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* 6. Fix "Open Application" CTA */
+  .cc-inner {
+    text-align: center !important;
+    padding: 40px 20px !important;
+  }
+
+  .cc-btn {
+    width: 100%;
+    max-width: 250px;
+    justify-content: center;
+    margin: 0 auto;
+  }
+}
